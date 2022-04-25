@@ -9,11 +9,13 @@ create table usuario_carrion (
  identificacion int(15),
  nombre varchar(100) not null,
  apellido varchar(45) not null,
- ciudad varchar (45) null,
+ edad int (10) null,
  tipo_rol int (10),
  ciudad_residencia varchar (50) null,
  correo_electronico varchar (50) null,
  fecha_creacion datetime default now(),
+ usuario varchar (50) not null,
+ clave varchar (50) not null,
  primary key (id),
  CONSTRAINT FK_Tipo_Rol FOREIGN KEY (tipo_rol) REFERENCES roles_carrion (id)
 
