@@ -95,6 +95,7 @@ dependencies {
 	implementation project.ext.flyway
 
 	implementation project(':infraestructura')
+	implementation group: 'joda-time', name: 'joda-time', version: '2.3'
 
 }
 

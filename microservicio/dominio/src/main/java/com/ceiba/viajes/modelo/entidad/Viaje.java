@@ -2,12 +2,15 @@ package com.ceiba.viajes.modelo.entidad;
 
 import com.ceiba.dominio.excepcion.ExcepcionValorInvalido;
 import lombok.Getter;
+import org.joda.time.DateTimeConstants;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.time.ZoneId;
 import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
+import java.util.Locale;
 
 import static com.ceiba.dominio.ValidadorArgumento.validarObligatorio;
 
@@ -62,10 +65,9 @@ public class Viaje {
 
     private boolean validarFecha(LocalDateTime fechaServicio){
         boolean estado=false;
-        Date fechaFormateada = Date.from(fechaServicio.atZone(ZoneId.systemDefault()).toInstant());
-        Calendar calendar=Calendar.getInstance();
-        calendar.setTime(fechaFormateada);
-        if (calendar.get(Calendar.DAY_OF_WEEK)==Calendar.SATURDAY || calendar.get(Calendar.DAY_OF_WEEK)==Calendar.SUNDAY){
+        LocalDate fechaInicialServicio = LocalDate.of(fechaServicio.getYear(), fechaServicio.getMonth(), fechaServicio.getDayOfMonth());
+        int dia = fechaInicialServicio.getDayOfWeek().getValue();
+        if (DateTimeConstants.SATURDAY == dia || DateTimeConstants.SUNDAY == dia) {
             estado=true;
         }
         return estado;
