@@ -2,6 +2,7 @@ package com.ceiba.viajes.servicio.testdatabuilder;
 
 import com.ceiba.vehiculo.modelo.entidad.VehiculoCarrion;
 import com.ceiba.vehiculo.servicio.testdatabuilder.VehiculoCarrionDataBuilder;
+import com.ceiba.viajes.modelo.dto.DtoViaje;
 import com.ceiba.viajes.modelo.entidad.Viaje;
 
 import java.time.LocalDateTime;
@@ -67,6 +68,12 @@ public class ViajeTestDataBuilder {
         this.idConductor = idConductor;
         return this;
     }
+
+    public DtoViaje buildDto() {
+        return new DtoViaje(id,idUsuario,idConductor,tonelads,tipoVehiculo,fechaCreacion,fechaServicio,
+                origen,destino,terminado,tipoCasa,precio);
+    }
+
     public Viaje build() {
         return new Viaje(id,idUsuario,idConductor,tonelads,tipoVehiculo,fechaCreacion,fechaServicio,
                 origen,destino,terminado,tipoCasa,precio);

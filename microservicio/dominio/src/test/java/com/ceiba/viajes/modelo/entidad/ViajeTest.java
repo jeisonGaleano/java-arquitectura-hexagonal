@@ -1,4 +1,4 @@
-package com.ceiba.viajes.entidad;
+package com.ceiba.viajes.modelo.entidad;
 
 import com.ceiba.BasePrueba;
 import com.ceiba.dominio.excepcion.ExcepcionValorObligatorio;

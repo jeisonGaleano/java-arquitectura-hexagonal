@@ -1,5 +1,6 @@
 package com.ceiba.vehiculo.servicio.testdatabuilder;
 
+import com.ceiba.vehiculo.modelo.dto.DtoVehiculoCarrion;
 import com.ceiba.vehiculo.modelo.entidad.VehiculoCarrion;
 
 public class VehiculoCarrionDataBuilder {
@@ -45,6 +46,10 @@ public class VehiculoCarrionDataBuilder {
         return this;
     }
 
+    public DtoVehiculoCarrion buildDto() {
+        return new DtoVehiculoCarrion(id,idConductor, placa,numeroMotor,numeroChasis,toneladas,
+                tipoVehiculo,modelo,marca);
+    }
     public VehiculoCarrion build() {
         return new VehiculoCarrion(id,idConductor, placa,numeroMotor,numeroChasis,toneladas,
                 tipoVehiculo,modelo,marca);

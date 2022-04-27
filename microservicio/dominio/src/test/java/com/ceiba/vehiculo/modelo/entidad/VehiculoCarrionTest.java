@@ -1,4 +1,4 @@
-package com.ceiba.vehiculo.entidad;
+package com.ceiba.vehiculo.modelo.entidad;
 
 import com.ceiba.BasePrueba;
 import com.ceiba.dominio.excepcion.ExcepcionLongitudValor;

@@ -1,4 +1,4 @@
-package com.ceiba.usuario.entidad;
+package com.ceiba.usuario.modelo.entidad;
 
 import com.ceiba.BasePrueba;
 import com.ceiba.dominio.excepcion.ExcepcionLongitudValor;
