@@ -42,6 +42,18 @@ class ComandoControladorUsuarioCarrionTest {
                 .andExpect(status().isOk())
                 .andExpect(content().json("{'valor': 2}"));
     }
+    @Test
+    @DisplayName("Deberia actualizar un usuario")
+    void deberiaActualizarUnUsuario() throws Exception{
+        // arrange
+        Long identificacion = 1143171888L;
+        ComandoUsuarioCarrion usuario = new ComandoUsuarioCarrionTestDataBuilder().build();
+        // act - assert
+        mocMvc.perform(put("/usuarios-carrion/{id}",identificacion)
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(objectMapper.writeValueAsString(usuario)))
+                .andExpect(status().isOk());
+    }
 
 
 }

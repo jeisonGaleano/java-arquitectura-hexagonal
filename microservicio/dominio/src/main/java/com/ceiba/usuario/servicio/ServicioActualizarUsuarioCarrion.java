@@ -20,7 +20,7 @@ public class ServicioActualizarUsuarioCarrion {
     }
 
     private void validarExistenciaPrevia(UsuarioCarrion usuario) {
-        boolean existe = this.repositorioUsuario.existePorIdentificacion(usuario.getId());
+        boolean existe = this.repositorioUsuario.existePorIdentificacion(usuario.getIdentificacion());
         if(!existe) {
             throw new ExcepcionDuplicidad(EL_USUARIO_NO_EXISTE_EN_EL_SISTEMA);
         }
