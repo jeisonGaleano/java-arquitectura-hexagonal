@@ -46,7 +46,7 @@ public class ComandoControladorUsuarioCarrion {
     @PutMapping(value="/{id}")
     @ApiOperation("Actualizar Usuario")
     public void actualizar(@RequestBody ComandoUsuarioCarrion comandoUsuario, @PathVariable Long id) {
-        comandoUsuario.setId(id);
+        comandoUsuario.setIdentificacion(id);
         manejadorActualizarUsuarioCarrion.ejecutar(comandoUsuario);
     }
 

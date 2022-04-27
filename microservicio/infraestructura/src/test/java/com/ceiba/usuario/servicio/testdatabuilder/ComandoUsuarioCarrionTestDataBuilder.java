@@ -19,15 +19,15 @@ public class ComandoUsuarioCarrionTestDataBuilder {
     private LocalDateTime fechaCreacion;
 
     public ComandoUsuarioCarrionTestDataBuilder() {
-        identificacion=1143171888L;
-        nombre="json";
-        apellido="galeano";
-        usuario="json1";
-        clave="1234567";
+        identificacion=1143171018L;
+        nombre="Json";
+        apellido="Galeano";
+        usuario="Json1";
+        clave="1234567890";
         edad=22L;
         tipoRol=1L;
         ciudadResidencia="Barranquilla";
-        correoElectronico="jeiso.galeano@gmail.com";
+        correoElectronico="Santa Marta";
         fechaCreacion=LocalDateTime.now();
     }
 
