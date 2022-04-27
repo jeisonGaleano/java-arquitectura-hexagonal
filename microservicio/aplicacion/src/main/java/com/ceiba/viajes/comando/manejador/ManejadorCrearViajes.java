@@ -5,7 +5,7 @@ import com.ceiba.manejador.ManejadorComandoRespuesta;
 import com.ceiba.viajes.comando.ComandoViaje;
 import com.ceiba.viajes.comando.fabrica.FabricaViaje;
 import com.ceiba.viajes.modelo.entidad.Viaje;
-import com.ceiba.viajes.ServicioCrearViaje;
+import com.ceiba.viajes.servicio.ServicioCrearViaje;
 import org.springframework.stereotype.Component;
 
 @Component

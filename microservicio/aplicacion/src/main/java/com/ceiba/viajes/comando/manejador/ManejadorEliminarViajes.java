@@ -2,7 +2,7 @@ package com.ceiba.viajes.comando.manejador;
 
 import com.ceiba.manejador.ManejadorComando;
 import com.ceiba.viajes.comando.fabrica.FabricaViaje;
-import com.ceiba.viajes.ServicioEliminarViaje;
+import com.ceiba.viajes.servicio.ServicioEliminarViaje;
 import org.springframework.stereotype.Component;
 
 @Component

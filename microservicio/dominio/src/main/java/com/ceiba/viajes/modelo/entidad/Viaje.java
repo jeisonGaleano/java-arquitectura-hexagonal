@@ -5,8 +5,11 @@ import lombok.Getter;
 
 import java.time.LocalDateTime;
 import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
 import java.util.Calendar;
 import java.util.Date;
+
+import static com.ceiba.dominio.ValidadorArgumento.validarObligatorio;
 
 @Getter
 public class Viaje {
@@ -15,6 +18,9 @@ public class Viaje {
     private static final String NO_SE_REALIZA_SERVICIO_POR_FECHA = "No se puede agendar servicio para el mismo día";
 
     private static final Long PORCENTAJE_DESCUENTO=5L;
+    private static final String SE_DEBE_INGRESAR_EL_ID_USUARIO = "Se debe ingresar el id usuario";
+
+    private static final String SE_DEBE_INGRESAR_EL_ID_CONDUCTOR = "Se debe ingresar el id conductor";
 
     private Long id;
     private Long idUsuario;
@@ -32,6 +38,9 @@ public class Viaje {
     public Viaje(Long id, Long idUsuario, Long idConductor, Long tonelads, Long tipoVehiculo,
                  LocalDateTime fechaCreacion, LocalDateTime fechaServicio, String origen,
                  String destino, Boolean terminado, String tipoCasa, Long precio) {
+        validarObligatorio(idUsuario, SE_DEBE_INGRESAR_EL_ID_USUARIO);
+        validarObligatorio(idConductor, SE_DEBE_INGRESAR_EL_ID_CONDUCTOR);
+
         validarAnterioridadViaje(fechaServicio);
         validarViajesACondominio(fechaServicio,tipoCasa);
         this.id = id;
@@ -74,8 +83,9 @@ public class Viaje {
         }
     }
     private void validarAnterioridadViaje(LocalDateTime fechaServicio){
+        DateTimeFormatter dtformat = DateTimeFormatter.ofPattern("dd.MM.yyyy");
         LocalDateTime localDateTime= LocalDateTime.now();
-        if (localDateTime.isEqual(fechaServicio)){
+        if (localDateTime.format(dtformat).equals(fechaServicio.format(dtformat))){
             throw new ExcepcionValorInvalido(NO_SE_REALIZA_SERVICIO_POR_FECHA);
         }
     }

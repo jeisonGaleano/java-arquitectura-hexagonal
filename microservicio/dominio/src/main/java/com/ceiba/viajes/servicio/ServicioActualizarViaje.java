@@ -1,4 +1,4 @@
-package com.ceiba.viajes;
+package com.ceiba.viajes.servicio;
 
 import com.ceiba.dominio.excepcion.ExcepcionDuplicidad;
 import com.ceiba.vehiculo.modelo.entidad.VehiculoCarrion;

@@ -1,9 +1,9 @@
 package com.ceiba.configuracion;
 
 import com.ceiba.viajes.puerto.repositorio.RepositorioViaje;
-import com.ceiba.viajes.ServicioActualizarViaje;
-import com.ceiba.viajes.ServicioCrearViaje;
-import com.ceiba.viajes.ServicioEliminarViaje;
+import com.ceiba.viajes.servicio.ServicioActualizarViaje;
+import com.ceiba.viajes.servicio.ServicioCrearViaje;
+import com.ceiba.viajes.servicio.ServicioEliminarViaje;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
