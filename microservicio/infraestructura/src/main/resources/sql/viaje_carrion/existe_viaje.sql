@@ -1,0 +1,1 @@
+select count(1) from viajes_carrion where id_conductor = :idConductor and id_usuario = :idUsuario

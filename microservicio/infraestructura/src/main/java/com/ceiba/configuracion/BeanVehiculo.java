@@ -1,7 +1,5 @@
 package com.ceiba.configuracion;
 
-import com.ceiba.usuario.puerto.repositorio.RepositorioUsuario;
-import com.ceiba.usuario.servicio.ServicioCrearUsuario;
 import com.ceiba.vehiculo.puerto.repositorio.RepositorioVehiculo;
 import com.ceiba.vehiculo.servicio.ServicioActualizarVehiculo;
 import com.ceiba.vehiculo.servicio.ServicioCrearVehiculo;

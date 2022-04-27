@@ -1,7 +1,6 @@
 package com.ceiba.usuario.adaptador.dao;
 
 import com.ceiba.infraestructura.jdbc.MapperResult;
-import com.ceiba.usuario.modelo.dto.DtoUsuario;
 import com.ceiba.usuario.modelo.dto.DtoUsuarioCarrion;
 import org.springframework.jdbc.core.RowMapper;
 

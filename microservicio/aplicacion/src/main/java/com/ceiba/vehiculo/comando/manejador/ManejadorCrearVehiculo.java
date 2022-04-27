@@ -2,7 +2,6 @@ package com.ceiba.vehiculo.comando.manejador;
 
 import com.ceiba.ComandoRespuesta;
 import com.ceiba.manejador.ManejadorComandoRespuesta;
-import com.ceiba.usuario.modelo.entidad.UsuarioCarrion;
 import com.ceiba.vehiculo.comando.ComandoVehiculo;
 import com.ceiba.vehiculo.comando.fabrica.FabricaVehiculo;
 import com.ceiba.vehiculo.modelo.entidad.VehiculoCarrion;

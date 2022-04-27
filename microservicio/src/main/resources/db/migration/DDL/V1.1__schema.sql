@@ -53,6 +53,9 @@ create table viajes_carrion (
  fecha_servicio datetime not null,
  origen varchar (50),
  destino  varchar (50),
+ terminado boolean default false,
+ tipo_casa varchar (50),
+ precio int (50),
  primary key (id),
  CONSTRAINT FK_Id_Conductor_Viajes FOREIGN KEY (id_conductor) REFERENCES vehiculo_carrion (id)
 );

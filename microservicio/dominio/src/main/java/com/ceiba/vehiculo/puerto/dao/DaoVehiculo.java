@@ -6,6 +6,6 @@ import java.util.List;
 
 public interface DaoVehiculo {
 
-    List<DtoVehiculoCarrion> listarVehiculoPorConductor(Long identificacion);
+    List<DtoVehiculoCarrion> listarVehiculoPorConductor(Long idConductor);
 
 }

@@ -1,0 +1,1 @@
+select count(1) from vehiculo_carrion where placa = :placa

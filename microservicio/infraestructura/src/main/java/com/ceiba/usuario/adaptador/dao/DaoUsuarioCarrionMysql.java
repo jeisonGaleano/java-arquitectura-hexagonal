@@ -11,7 +11,7 @@ import java.util.List;
 @Repository
 public class DaoUsuarioCarrionMysql implements DaoUsuarioCarrion {
 
-    @SqlStatement(namespace="usuario", value="listar")
+    @SqlStatement(namespace="usuario_carrion", value="listar")
     private static String sqlListar;
 
     private final CustomNamedParameterJdbcTemplate customNamedParameterJdbcTemplate;

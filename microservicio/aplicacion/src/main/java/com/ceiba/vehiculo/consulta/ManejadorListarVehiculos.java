@@ -15,8 +15,8 @@ public class ManejadorListarVehiculos {
         this.daoVehiculo = daoVehiculo;
     }
 
-    public List<DtoVehiculoCarrion> ejecutar(Long identificacion){
-        return this.daoVehiculo.listarVehiculoPorConductor(identificacion);
+    public List<DtoVehiculoCarrion> ejecutar(Long idConductor){
+        return this.daoVehiculo.listarVehiculoPorConductor(idConductor);
     }
 
 }

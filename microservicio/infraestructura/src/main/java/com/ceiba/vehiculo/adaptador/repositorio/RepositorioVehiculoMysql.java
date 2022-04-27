@@ -29,13 +29,13 @@ public class RepositorioVehiculoMysql implements RepositorioVehiculo {
     }
 
     @Override
-    public Long crear(VehiculoCarrion usuario) {
-        return this.customNamedParameterJdbcTemplate.crear(usuario, sqlCrear);
+    public Long crear(VehiculoCarrion vehiculoCarrion) {
+        return this.customNamedParameterJdbcTemplate.crear(vehiculoCarrion, sqlCrear);
     }
 
     @Override
-    public void actualizar(VehiculoCarrion usuario) {
-        this.customNamedParameterJdbcTemplate.actualizar(usuario, sqlActualizar);
+    public void actualizar(VehiculoCarrion vehiculoCarrion) {
+        this.customNamedParameterJdbcTemplate.actualizar(vehiculoCarrion, sqlActualizar);
     }
 
     @Override

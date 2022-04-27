@@ -1,7 +1,6 @@
 package com.ceiba.usuario.controlador;
 
 import com.ceiba.ComandoRespuesta;
-import com.ceiba.usuario.comando.ComandoUsuario;
 import com.ceiba.usuario.comando.ComandoUsuarioCarrion;
 import com.ceiba.usuario.comando.manejador.ManejadorActualizarUsuarioCarrion;
 import com.ceiba.usuario.comando.manejador.ManejadorCrearUsuarioCarrion;
@@ -22,14 +21,13 @@ public class ComandoControladorUsuarioCarrion {
 
     private final ManejadorActualizarUsuarioCarrion manejadorActualizarUsuarioCarrion;
 
-
+    @Autowired
     public ComandoControladorUsuarioCarrion(ManejadorCrearUsuarioCarrion manejadorCrearUsuarioCarrion, ManejadorEliminarUsuarioCarrion manejadorEliminarUsuarioCarrion, ManejadorActualizarUsuarioCarrion manejadorActualizarUsuarioCarrion) {
         this.manejadorCrearUsuarioCarrion = manejadorCrearUsuarioCarrion;
         this.manejadorEliminarUsuarioCarrion = manejadorEliminarUsuarioCarrion;
         this.manejadorActualizarUsuarioCarrion = manejadorActualizarUsuarioCarrion;
     }
 
-    @Autowired
 
 
     @PostMapping
