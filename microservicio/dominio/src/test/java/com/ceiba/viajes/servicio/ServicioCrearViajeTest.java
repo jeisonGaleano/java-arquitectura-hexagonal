@@ -1,7 +1,12 @@
 package com.ceiba.viajes.servicio;
 
 import com.ceiba.BasePrueba;
+import com.ceiba.dominio.excepcion.ExcepcionDuplicidad;
 import com.ceiba.dominio.excepcion.ExcepcionValorInvalido;
+import com.ceiba.usuario.modelo.entidad.UsuarioCarrion;
+import com.ceiba.usuario.puerto.repositorio.RepositorioUsuarioCarrion;
+import com.ceiba.usuario.servicio.ServicioCrearUsuarioCarrion;
+import com.ceiba.usuario.servicio.testdatabuilder.UsuarioCarrionTestDataBuilder;
 import com.ceiba.viajes.modelo.entidad.Viaje;
 import com.ceiba.viajes.puerto.repositorio.RepositorioViaje;
 import com.ceiba.viajes.servicio.testdatabuilder.ViajeTestDataBuilder;
@@ -58,4 +63,15 @@ class ServicioCrearViajeTest {
         BasePrueba.assertThrows(viajeTestDataBuilder::build, ExcepcionValorInvalido.class, "No se realizará servicio porque el lugar es condominio");
     }
 
+    @Test
+    @DisplayName("Deberia lanzar una exepcion cuando se valide la existencia del Viaje")
+    void deberiaLanzarUnaExepcionCuandoSeValideLaExistenciaDelViaje() {
+        // arrange
+        Viaje viaje = new ViajeTestDataBuilder().build();
+        RepositorioViaje repositorioViaje = Mockito.mock(RepositorioViaje.class);
+        Mockito.when(repositorioViaje.existeViaje(Mockito.anyLong(),Mockito.anyLong())).thenReturn(true);
+        ServicioCrearViaje servicioCrearUsuario = new ServicioCrearViaje(repositorioViaje);
+        // act - assert
+        BasePrueba.assertThrows(() -> servicioCrearUsuario.ejecutar(viaje), ExcepcionDuplicidad.class,"El viaje ya existe en el sistema");
+    }
 }

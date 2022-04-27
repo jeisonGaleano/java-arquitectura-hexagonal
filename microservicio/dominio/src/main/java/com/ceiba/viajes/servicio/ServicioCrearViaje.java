@@ -6,7 +6,7 @@ import com.ceiba.viajes.puerto.repositorio.RepositorioViaje;
 
 public class ServicioCrearViaje {
 
-    private static final String EL_VIAJE_YA_EXISTE_EN_EL_SISTEMA = "El usuario ya existe en el sistema";
+    private static final String EL_VIAJE_YA_EXISTE_EN_EL_SISTEMA = "El viaje ya existe en el sistema";
 
     private final RepositorioViaje repositorioViaje;
 
