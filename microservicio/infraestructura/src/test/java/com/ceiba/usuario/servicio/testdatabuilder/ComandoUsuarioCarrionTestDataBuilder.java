@@ -22,6 +22,7 @@ public class ComandoUsuarioCarrionTestDataBuilder {
         identificacion=1143171018L;
         nombre="Json";
         apellido="Galeano";
+        usuario="Json1";
         clave="1234567890";
         edad=22L;
         tipoRol=1L;
@@ -31,7 +32,7 @@ public class ComandoUsuarioCarrionTestDataBuilder {
     }
 
     public ComandoUsuarioCarrion build(){
-        return new ComandoUsuarioCarrion(id,identificacion,nombre,apellido,
-                clave,edad,tipoRol,ciudadResidencia,correoElectronico,fechaCreacion);
+        return new ComandoUsuarioCarrion(id,identificacion,nombre,apellido,usuario,clave,edad,
+                tipoRol,ciudadResidencia,correoElectronico,fechaCreacion);
     }
 }
