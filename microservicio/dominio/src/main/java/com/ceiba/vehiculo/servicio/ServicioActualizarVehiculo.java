@@ -6,7 +6,7 @@ import com.ceiba.vehiculo.puerto.repositorio.RepositorioVehiculo;
 
 public class ServicioActualizarVehiculo {
 
-    private static final String EL_VEHICULO_NO_EXISTE_EN_EL_SISTEMA = "El no vehiculo existe en el sistema";
+    private static final String EL_VEHICULO_NO_EXISTE_EN_EL_SISTEMA = "El vehiculo no existe en el sistema";
 
     private final RepositorioVehiculo repositorioVehiculo;
 

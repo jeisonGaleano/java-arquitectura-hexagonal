@@ -28,6 +28,10 @@ public class UsuarioCarrionTest {
         assertEquals("Json", usuario.getUsuario());
         assertEquals("1234", usuario.getClave());
         assertEquals(fechaCreacion, usuario.getFechaCreacion());
+        assertEquals(22, usuario.getEdad());
+        assertEquals("jeison.galeano@gmail.com", usuario.getCorreoElectronico());
+        assertEquals(1, usuario.getTipoRol());
+        assertEquals(123456789, usuario.getIdentificacion());
     }
 
     @Test
@@ -76,5 +80,17 @@ public class UsuarioCarrionTest {
                     usuarioTestDataBuilder.build();
                 },
                 ExcepcionValorObligatorio.class, "Se debe ingresar la fecha de creación");
+    }
+
+    @Test
+    void deberiaFallarSinIdentificacion() {
+
+        //Arrange
+        UsuarioCarrionTestDataBuilder usuarioTestDataBuilder = new UsuarioCarrionTestDataBuilder().conIdentificacion(null).conId(1L);
+        //act-assert
+        BasePrueba.assertThrows(() -> {
+                    usuarioTestDataBuilder.build();
+                },
+                ExcepcionValorObligatorio.class, "Se debe ingresar la identificacion de usuario");
     }
 }

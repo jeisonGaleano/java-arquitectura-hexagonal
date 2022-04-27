@@ -17,6 +17,8 @@ public class UsuarioCarrion {
     private static final String SE_DEBE_INGRESAR_LA_CLAVE = "Se debe ingresar la clave";
     private static final String SE_DEBE_INGRESAR_EL_NOMBRE_DE_USUARIO = "Se debe ingresar el nombre de usuario";
 
+    private static final String SE_DEBE_INGRESAR_LA_IDENTIFICACION = "Se debe ingresar la identificacion de usuario";
+
     private static final int LONGITUD_MINIMA_CLAVE = 4;
     private Long id;
     private Long identificacion;
@@ -34,6 +36,7 @@ public class UsuarioCarrion {
                           String usuario, String clave, Long edad, Long tipoRol, String ciudadResidencia,
                           String correoElectronico, LocalDateTime fechaCreacion) {
 
+        validarObligatorio(identificacion, SE_DEBE_INGRESAR_LA_IDENTIFICACION);
         validarObligatorio(nombre, SE_DEBE_INGRESAR_EL_NOMBRE_DE_USUARIO);
         validarObligatorio(clave, SE_DEBE_INGRESAR_LA_CLAVE);
         validarLongitud(clave, LONGITUD_MINIMA_CLAVE, String.format(LA_CLAVE_DEBE_TENER_UNA_LONGITUD_MAYOR_O_IGUAL_A,LONGITUD_MINIMA_CLAVE));

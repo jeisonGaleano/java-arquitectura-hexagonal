@@ -1,5 +1,6 @@
 package com.ceiba.usuario.servicio.testdatabuilder;
 
+import com.ceiba.usuario.modelo.dto.DtoUsuarioCarrion;
 import com.ceiba.usuario.modelo.entidad.UsuarioCarrion;
 
 import java.time.LocalDateTime;
@@ -50,6 +51,20 @@ public class UsuarioCarrionTestDataBuilder {
     public UsuarioCarrionTestDataBuilder conId(Long id) {
         this.id = id;
         return this;
+    }
+
+    public UsuarioCarrionTestDataBuilder conIdentificacion(Long identificacion) {
+        this.identificacion = identificacion;
+        return this;
+    }
+
+    public UsuarioCarrionTestDataBuilder conUsuario(String usuario) {
+        this.usuario = usuario;
+        return this;
+    }
+
+    public DtoUsuarioCarrion buildDto() {
+        return new DtoUsuarioCarrion(id,identificacion, nombre,apellido,usuario,clave,edad,tipoRol,ciudadResidencia,correoElectronico,fechaCreacion);
     }
 
     public UsuarioCarrion build() {
