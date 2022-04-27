@@ -13,7 +13,7 @@ class ServicioEliminarVehiculoTest {
 
     @Test
     @DisplayName("Deberia eliminar el vehiculo llamando al repositorio")
-    void deberiaEliminarElUsuarioLlamandoAlRepositorio() {
+    void deberiaEliminarElVehiculoLlamandoAlRepositorio() {
         RepositorioVehiculo repositorioVehiculo= Mockito.mock(RepositorioVehiculo.class);
         ServicioEliminarVehiculo servicioEliminarVehiculo = new ServicioEliminarVehiculo(repositorioVehiculo);
 

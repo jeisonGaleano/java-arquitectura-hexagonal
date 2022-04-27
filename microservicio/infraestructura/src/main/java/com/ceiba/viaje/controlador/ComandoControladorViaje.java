@@ -29,20 +29,20 @@ public class ComandoControladorViaje {
     }
 
     @PostMapping
-    @ApiOperation("Crear Usuario")
+    @ApiOperation("Crear viaje")
     public ComandoRespuesta<Long> crear(@RequestBody ComandoViaje comandoViaje) {
         return manejadorCrearViajes.ejecutar(comandoViaje);
     }
 
 
     @DeleteMapping(value="/{id}")
-    @ApiOperation("Eliminar Usuario")
+    @ApiOperation("Eliminar viaje")
     public void eliminar(@PathVariable Long id) {
         manejadorEliminarViajes.ejecutar(id);
     }
 
     @PutMapping(value="/{id}")
-    @ApiOperation("Actualizar Usuario")
+    @ApiOperation("Actualizar viaje")
     public void actualizar(@RequestBody ComandoViaje comandoViaje, @PathVariable Long id) {
         comandoViaje.setId(id);
         manejadorActualizarViajes.ejecutar(comandoViaje);

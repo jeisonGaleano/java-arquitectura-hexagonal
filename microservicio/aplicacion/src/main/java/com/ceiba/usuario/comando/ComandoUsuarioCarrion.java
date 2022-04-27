@@ -1,16 +1,12 @@
 package com.ceiba.usuario.comando;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
 
 @Getter
 @Setter
-@AllArgsConstructor
-@NoArgsConstructor
 public class ComandoUsuarioCarrion {
 
     private Long id;
@@ -24,4 +20,18 @@ public class ComandoUsuarioCarrion {
     private String ciudadResidencia;
     private String correoElectronico;
     private LocalDateTime fechaCreacion;
+
+    public ComandoUsuarioCarrion(Long id, Long identificacion, String nombre, String apellido, String usuario, Long edad, Long tipoRol, String ciudadResidencia, String correoElectronico, LocalDateTime fechaCreacion) {
+        this.id = id;
+        this.identificacion = identificacion;
+        this.nombre = nombre;
+        this.apellido = apellido;
+        this.usuario = usuario;
+        this.clave = clave;
+        this.edad = edad;
+        this.tipoRol = tipoRol;
+        this.ciudadResidencia = ciudadResidencia;
+        this.correoElectronico = correoElectronico;
+        this.fechaCreacion = fechaCreacion;
+    }
 }

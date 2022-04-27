@@ -27,20 +27,20 @@ public class ComandoControladorVehiculo {
     }
 
     @PostMapping
-    @ApiOperation("Crear Usuario")
+    @ApiOperation("Crear vehiculo")
     public ComandoRespuesta<Long> crear(@RequestBody ComandoVehiculo comandoVehiculo) {
         return manejadorCrearVehiculo.ejecutar(comandoVehiculo);
     }
 
 
     @DeleteMapping(value="/{id}")
-    @ApiOperation("Eliminar Usuario")
+    @ApiOperation("Eliminar vehiculo")
     public void eliminar(@PathVariable Long id) {
         manejadorEliminarVehiculo.ejecutar(id);
     }
 
     @PutMapping(value="/{id}")
-    @ApiOperation("Actualizar Usuario")
+    @ApiOperation("Actualizar vehiculo")
     public void actualizar(@RequestBody ComandoVehiculo comandoVehiculo, @PathVariable Long id) {
         comandoVehiculo.setId(id);
         manejadorActualizarVehiculo.ejecutar(comandoVehiculo);
