@@ -1,12 +1,10 @@
 package com.ceiba.viajes.modelo.dto;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 
 import java.time.LocalDateTime;
 
 @Getter
-@AllArgsConstructor
 public class DtoViaje {
 
     private Long id;
@@ -22,4 +20,20 @@ public class DtoViaje {
     private String tipoCasa;
     private Long precio;
 
+    public DtoViaje(Long id, Long idUsuario, Long idConductor, Long tonelads,
+                    Long tipoVehiculo, LocalDateTime fechaCreacion, LocalDateTime
+                            fechaServicio, String origen, String destino, Boolean terminado, String tipoCasa, Long precio) {
+        this.id = id;
+        this.idUsuario = idUsuario;
+        this.idConductor = idConductor;
+        this.tonelads = tonelads;
+        this.tipoVehiculo = tipoVehiculo;
+        this.fechaCreacion = fechaCreacion;
+        this.fechaServicio = fechaServicio;
+        this.origen = origen;
+        this.destino = destino;
+        this.terminado = terminado;
+        this.tipoCasa = tipoCasa;
+        this.precio = precio;
+    }
 }

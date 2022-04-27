@@ -18,6 +18,9 @@ public class Viaje {
     private static final String NO_SE_REALIZA_SERVICIO_POR_FECHA = "No se puede agendar servicio para el mismo día";
 
     private static final Long PORCENTAJE_DESCUENTO=5L;
+
+    private static final String CONDOMINIO="condominio";
+
     private static final String SE_DEBE_INGRESAR_EL_ID_USUARIO = "Se debe ingresar el id usuario";
 
     private static final String SE_DEBE_INGRESAR_EL_ID_CONDUCTOR = "Se debe ingresar el id conductor";
@@ -78,7 +81,7 @@ public class Viaje {
     }
 
     private void validarViajesACondominio(LocalDateTime fechaServicio, String tipoCasa){
-        if (tipoCasa.equalsIgnoreCase("condominio") && validarFecha(fechaServicio)){
+        if (tipoCasa.equalsIgnoreCase(CONDOMINIO) && validarFecha(fechaServicio)){
             throw new ExcepcionValorInvalido(NO_SE_REALIZA_SERVICIO);
         }
     }
