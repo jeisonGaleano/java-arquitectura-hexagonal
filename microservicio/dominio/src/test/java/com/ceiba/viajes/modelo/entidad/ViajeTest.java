@@ -1,6 +1,7 @@
 package com.ceiba.viajes.modelo.entidad;
 
 import com.ceiba.BasePrueba;
+import com.ceiba.dominio.excepcion.ExcepcionValorInvalido;
 import com.ceiba.dominio.excepcion.ExcepcionValorObligatorio;
 import com.ceiba.viajes.servicio.testdatabuilder.ViajeTestDataBuilder;
 import org.junit.jupiter.api.DisplayName;
@@ -58,5 +59,29 @@ class ViajeTest {
                 },
                 ExcepcionValorObligatorio.class, "Se debe ingresar el id conductor");
     }
+
+    @Test
+    void deberiaFallarSiEsFinParaCondominio() {
+
+        //Arrange
+        ViajeTestDataBuilder usuarioTestDataBuilder = new ViajeTestDataBuilder().conFechaServicioYTipoDeCasa(LocalDateTime.parse("2022-05-01T09:02:26.658"), "condominio").conId(1L);
+        //act-assert
+        BasePrueba.assertThrows(() -> {
+                    usuarioTestDataBuilder.build();
+                },
+                ExcepcionValorInvalido.class, "No se realizará servicio porque el lugar es condominio");
+    }
+
+    @Test
+    void deberiaIncrementarPorcentajeFinDeSemana() {
+
+        //Arrange
+        Viaje viaje = new ViajeTestDataBuilder().conPrecio(150000L).conFechaServicio(LocalDateTime.parse("2022-05-01T09:02:26.658")).conId(1L).conTipoCasa("casa").build();
+        //act-assert
+        assertEquals(true, viaje.getTerminado());
+
+    }
+
+
 
 }

@@ -3,7 +3,6 @@ package com.ceiba.viajes.puerto.repositorio;
 
 import com.ceiba.viajes.modelo.entidad.Viaje;
 
-import java.time.LocalDateTime;
 
 public interface RepositorioViaje {
 

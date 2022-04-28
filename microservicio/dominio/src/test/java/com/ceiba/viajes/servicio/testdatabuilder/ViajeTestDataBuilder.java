@@ -69,6 +69,17 @@ public class ViajeTestDataBuilder {
         return this;
     }
 
+    public ViajeTestDataBuilder conTipoCasa(String tipoCasa){
+        this.tipoCasa=tipoCasa;
+        return this;
+    }
+
+    public ViajeTestDataBuilder conPrecio(Long precio){
+        this.precio=precio;
+        return this;
+    }
+
+
     public DtoViaje buildDto() {
         return new DtoViaje(id,idUsuario,idConductor,tonelads,tipoVehiculo,fechaCreacion,fechaServicio,
                 origen,destino,terminado,tipoCasa,precio);

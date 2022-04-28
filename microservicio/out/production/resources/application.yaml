@@ -1,0 +1,21 @@
+jasypt:
+   encryptor:
+      password: ${jasyptpwd:secretkey}
+      algorithm: PBEWithMD5AndDES
+
+server:
+   port: 8001
+   servlet:
+      context-path: /carrion-app
+      session:
+         timeout: 21600s
+
+spring:
+   datasource:
+      driver-class-name: com.mysql.jdbc.Driver
+      type: com.zaxxer.hikari.HikariDataSource
+      jdbcUrl: jdbc:mysql://localhost:3306/carrion_app_db?useSSL=false&createDatabaseIfNotExist=true
+      username: root
+      password: root1234
+      hikari:
+         poolName: pool
