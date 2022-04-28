@@ -11,6 +11,7 @@ import com.ceiba.viajes.puerto.repositorio.RepositorioViaje;
 import com.ceiba.viajes.servicio.testdatabuilder.ViajeTestDataBuilder;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
+import org.mockito.Mock;
 import org.mockito.Mockito;
 
 import static org.junit.jupiter.api.Assertions.*;
@@ -23,7 +24,7 @@ class ServicioActualizarViajeTest {
         // arrange
         Viaje viaje = new ViajeTestDataBuilder().conId(1L).build();
         RepositorioViaje repositorioViaje = Mockito.mock(RepositorioViaje.class);
-        Mockito.when(repositorioViaje.existeViaje(Mockito.anyLong(),Mockito.anyLong())).thenReturn(true);
+        Mockito.when(repositorioViaje.existeViaje(Mockito.anyLong(),Mockito.anyLong(), Mockito.anyBoolean())).thenReturn(true);
         ServicioActualizarViaje servicioActualizarViaje = new ServicioActualizarViaje(repositorioViaje);
         // act
         servicioActualizarViaje.ejecutar(viaje);
@@ -36,7 +37,7 @@ class ServicioActualizarViajeTest {
     void deberiaValidarExistenciaViaje(){
         Viaje viaje = new ViajeTestDataBuilder().conId(1L).build();
         RepositorioViaje repositorioViaje = Mockito.mock(RepositorioViaje.class);
-        Mockito.when(repositorioViaje.existeViaje(Mockito.anyLong(),Mockito.anyLong())).thenReturn(false);
+        Mockito.when(repositorioViaje.existeViaje(Mockito.anyLong(),Mockito.anyLong(),Mockito.anyBoolean())).thenReturn(false);
         ServicioActualizarViaje servicioActualizarViaje = new ServicioActualizarViaje(repositorioViaje);
         // act - assert
         BasePrueba.assertThrows(() -> servicioActualizarViaje.ejecutar(viaje), ExcepcionDuplicidad.class,"El no existe existe en el sistema");

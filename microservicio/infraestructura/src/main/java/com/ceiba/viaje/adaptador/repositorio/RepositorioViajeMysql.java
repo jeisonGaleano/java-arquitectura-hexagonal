@@ -49,11 +49,11 @@ public class RepositorioViajeMysql implements RepositorioViaje {
     }
 
     @Override
-    public boolean existeViaje(Long idConductor, Long idUsuario) {
+    public boolean existeViaje(Long idConductor, Long idUsuario, boolean terminado) {
         MapSqlParameterSource paramSource = new MapSqlParameterSource();
         paramSource.addValue("idConductor", idConductor);
         paramSource.addValue("idUsuario", idUsuario);
-        paramSource.addValue("terminado", false);
+        paramSource.addValue("terminado", terminado);
         return this.customNamedParameterJdbcTemplate.getNamedParameterJdbcTemplate().queryForObject(sqlExisteViajeActivo,paramSource, Boolean.class);
 
     }

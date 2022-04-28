@@ -2,9 +2,6 @@ package com.ceiba.viajes.modelo.entidad;
 
 import com.ceiba.BasePrueba;
 import com.ceiba.dominio.excepcion.ExcepcionValorObligatorio;
-import com.ceiba.vehiculo.modelo.entidad.VehiculoCarrion;
-import com.ceiba.vehiculo.servicio.testdatabuilder.VehiculoCarrionDataBuilder;
-import com.ceiba.viajes.modelo.entidad.Viaje;
 import com.ceiba.viajes.servicio.testdatabuilder.ViajeTestDataBuilder;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -28,7 +25,7 @@ class ViajeTest {
         assertEquals(1, viaje.getId());
         assertEquals(1, viaje.getIdUsuario());
         assertEquals(2, viaje.getIdConductor());
-        assertEquals(10, viaje.getTonelads());
+        assertEquals(10, viaje.getToneladas());
         assertEquals(1, viaje.getTipoVehiculo());
         assertEquals(LocalDateTime.parse("2022-05-01T09:02:26.658"), viaje.getFechaCreacion());
         assertEquals("Barranquilla", viaje.getOrigen());

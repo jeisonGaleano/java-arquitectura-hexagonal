@@ -1,2 +1,2 @@
 insert into viajes_carrion (id_usuario, id_conductor,toneladas, tipo_vehiculo, fecha_creacion, fecha_servicio, origen, destino)
- values (:idUsuario, :idConductor, :toneladas, :tipoVehicul, :fechaCreacion, :fechaServicio, :origen, :destino)
+ values (:idUsuario, :idConductor, :toneladas, :tipoVehiculo, :fechaCreacion, :fechaServicio, :origen, :destino)

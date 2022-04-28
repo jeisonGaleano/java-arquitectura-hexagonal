@@ -22,12 +22,12 @@ class ServicioCrearViajeTest {
 
 
     @Test
-    @DisplayName("Deberia Crear el vehiculo de manera correcta")
-    void deberiaCrearElUsuarioDeManeraCorrecta() {
+    @DisplayName("Deberia Crear el viaje de manera correcta")
+    void deberiaCrearElViajeDeManeraCorrecta() {
         // arrange
         Viaje viaje = new ViajeTestDataBuilder().build();
         RepositorioViaje repositorioViaje = Mockito.mock(RepositorioViaje.class);
-        Mockito.when(repositorioViaje.existeViaje(Mockito.anyLong(), Mockito.anyLong())).thenReturn(false);
+        Mockito.when(repositorioViaje.existeViaje(Mockito.anyLong(), Mockito.anyLong(), Mockito.anyBoolean())).thenReturn(false);
         Mockito.when(repositorioViaje.crear(viaje)).thenReturn(10L);
         ServicioCrearViaje servicioCrearVehiculo = new ServicioCrearViaje(repositorioViaje);
         Long viajeCarrion = servicioCrearVehiculo.ejecutar(viaje);
@@ -69,7 +69,7 @@ class ServicioCrearViajeTest {
         // arrange
         Viaje viaje = new ViajeTestDataBuilder().build();
         RepositorioViaje repositorioViaje = Mockito.mock(RepositorioViaje.class);
-        Mockito.when(repositorioViaje.existeViaje(Mockito.anyLong(),Mockito.anyLong())).thenReturn(true);
+        Mockito.when(repositorioViaje.existeViaje(Mockito.anyLong(),Mockito.anyLong(), Mockito.anyBoolean())).thenReturn(true);
         ServicioCrearViaje servicioCrearUsuario = new ServicioCrearViaje(repositorioViaje);
         // act - assert
         BasePrueba.assertThrows(() -> servicioCrearUsuario.ejecutar(viaje), ExcepcionDuplicidad.class,"El viaje ya existe en el sistema");

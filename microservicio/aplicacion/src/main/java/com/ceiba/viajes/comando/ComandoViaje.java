@@ -15,7 +15,7 @@ public class ComandoViaje {
     private Long id;
     private Long idUsuario;
     private Long idConductor;
-    private Long tonelads;
+    private Long toneladas;
     private Long tipoVehiculo;
     private LocalDateTime fechaCreacion;
     private LocalDateTime fechaServicio;

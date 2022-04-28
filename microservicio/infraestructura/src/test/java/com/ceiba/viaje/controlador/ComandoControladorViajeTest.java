@@ -1,12 +1,11 @@
-package com.ceiba.vehiculo.controlador;
+package com.ceiba.viaje.controlador;
 
 import com.ceiba.ApplicationMock;
-import com.ceiba.usuario.comando.ComandoUsuarioCarrion;
-import com.ceiba.usuario.controlador.ComandoControladorUsuarioCarrion;
-import com.ceiba.usuario.servicio.testdatabuilder.ComandoUsuarioCarrionTestDataBuilder;
 import com.ceiba.vehiculo.ComandoControladorVehiculo;
 import com.ceiba.vehiculo.comando.ComandoVehiculo;
 import com.ceiba.vehiculo.servicio.ComandoVehiculoTestDataBuilder;
+import com.ceiba.viaje.servicio.ComandoViajeTestDataBuilder;
+import com.ceiba.viajes.comando.ComandoViaje;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
@@ -19,7 +18,6 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 import org.springframework.test.web.servlet.MockMvc;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.put;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
@@ -29,8 +27,7 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 @WebMvcTest(ComandoControladorVehiculo.class)
 @ContextConfiguration(classes= ApplicationMock.class)
 @DirtiesContext(classMode = DirtiesContext.ClassMode.AFTER_EACH_TEST_METHOD)
-class ComandoControladorVehiculoTest {
-
+class ComandoControladorViajeTest {
 
     @Autowired
     private ObjectMapper objectMapper;
@@ -39,29 +36,28 @@ class ComandoControladorVehiculoTest {
     private MockMvc mocMvc;
 
     @Test
-    @DisplayName("Deberia crear un vehiculo")
-    void deberiaCrearUnVehiculo() throws Exception{
+    @DisplayName("Deberia crear un viaje")
+    void deberiaCrearUnViaje() throws Exception{
         // arrange
-        ComandoVehiculo vehiculo = new ComandoVehiculoTestDataBuilder().build();
+        ComandoViaje viaje = new ComandoViajeTestDataBuilder().build();
         // act - assert
-        vehiculo.setPlaca("QHM980");
-        mocMvc.perform(post("/vehiculo")
+        mocMvc.perform(post("/viaje")
                         .contentType(MediaType.APPLICATION_JSON)
-                        .content(objectMapper.writeValueAsString(vehiculo)))
+                        .content(objectMapper.writeValueAsString(viaje)))
                 .andExpect(status().isOk())
-                .andExpect(content().json("{'valor': 3}"));
+                .andExpect(content().json("{'valor': 2}"));
     }
 
     @Test
     @DisplayName("Deberia actualizar un usuario")
-    void deberiaActualizarUnUsuario() throws Exception{
+    void deberiaActualizarUnViaje() throws Exception{
         // arrange
-        Long id = 1L;
-        ComandoVehiculo vehiculo = new ComandoVehiculoTestDataBuilder().build();
+        ComandoViaje viaje = new ComandoViajeTestDataBuilder().build();
         // act - assert
-        mocMvc.perform(put("/vehiculo/{id}",id)
+        Long id = 1L;
+        mocMvc.perform(put("/viaje/{id}",id)
                         .contentType(MediaType.APPLICATION_JSON)
-                        .content(objectMapper.writeValueAsString(vehiculo)))
+                        .content(objectMapper.writeValueAsString(viaje)))
                 .andExpect(status().isOk());
     }
 }

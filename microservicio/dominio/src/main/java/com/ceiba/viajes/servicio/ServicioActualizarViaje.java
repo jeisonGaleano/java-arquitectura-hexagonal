@@ -21,7 +21,7 @@ public class ServicioActualizarViaje {
     }
 
     private void validarExistenciaPrevia(Viaje viaje) {
-        boolean existe = this.repositorioViaje.existeViaje(viaje.getIdConductor(), viaje.getIdUsuario());
+        boolean existe = this.repositorioViaje.existeViaje(viaje.getIdConductor(), viaje.getIdUsuario(), true);
         if(!existe) {
             throw new ExcepcionDuplicidad(EL_VIAJE_NO_EXISTE_EN_EL_SISTEMA);
         }

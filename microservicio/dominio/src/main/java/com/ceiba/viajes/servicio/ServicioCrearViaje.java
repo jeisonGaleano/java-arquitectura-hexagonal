@@ -19,7 +19,7 @@ public class ServicioCrearViaje {
         return this.repositorioViaje.crear(viaje);
     }
     private void validarExistenciaPrevia(Viaje viaje) {
-        boolean existe = this.repositorioViaje.existeViaje(viaje.getIdConductor(), viaje.getIdUsuario());
+        boolean existe = this.repositorioViaje.existeViaje(viaje.getIdConductor(), viaje.getIdUsuario(), false);
         if(existe) {
             throw new ExcepcionDuplicidad(EL_VIAJE_YA_EXISTE_EN_EL_SISTEMA);
         }

@@ -1,4 +1,4 @@
-package com.ceiba.viaje.controlador;
+package com.ceiba.viaje;
 
 import com.ceiba.ComandoRespuesta;
 import com.ceiba.viajes.comando.ComandoViaje;

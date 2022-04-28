@@ -27,7 +27,7 @@ public class Viaje {
     private Long id;
     private Long idUsuario;
     private Long idConductor;
-    private Long tonelads;
+    private Long toneladas;
     private Long tipoVehiculo;
     private LocalDateTime fechaCreacion;
     private LocalDateTime fechaServicio;
@@ -37,7 +37,7 @@ public class Viaje {
     private String tipoCasa;
     private Long precio;
 
-    public Viaje(Long id, Long idUsuario, Long idConductor, Long tonelads, Long tipoVehiculo,
+    public Viaje(Long id, Long idUsuario, Long idConductor, Long toneladas, Long tipoVehiculo,
                  LocalDateTime fechaCreacion, LocalDateTime fechaServicio, String origen,
                  String destino, Boolean terminado, String tipoCasa, Long precio) {
         validarObligatorio(idUsuario, SE_DEBE_INGRESAR_EL_ID_USUARIO);
@@ -48,7 +48,7 @@ public class Viaje {
         this.id = id;
         this.idUsuario = idUsuario;
         this.idConductor = idConductor;
-        this.tonelads = tonelads;
+        this.toneladas = toneladas;
         this.tipoVehiculo = tipoVehiculo;
         this.fechaCreacion = fechaCreacion;
         this.fechaServicio = fechaServicio;

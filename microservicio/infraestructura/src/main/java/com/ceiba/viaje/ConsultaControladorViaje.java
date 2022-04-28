@@ -1,4 +1,4 @@
-package com.ceiba.viaje.controlador;
+package com.ceiba.viaje;
 
 import com.ceiba.viajes.consulta.ManejadorListarViajes;
 import com.ceiba.viajes.modelo.dto.DtoViaje;
