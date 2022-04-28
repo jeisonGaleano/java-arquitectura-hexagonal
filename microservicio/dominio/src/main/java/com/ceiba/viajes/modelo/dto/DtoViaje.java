@@ -18,12 +18,12 @@ public class DtoViaje {
     private Long toneladas;
     private Long tipoVehiculo;
     private LocalDateTime fechaCreacion;
-    private LocalDateTime fechaServicio;
+    private LocalDateTime fechaServicios;
     private String origen;
     private String destino;
     private Boolean terminado;
     private String tipoCasa;
-    private Long precio;
+    private Long precios;
 
 
 }

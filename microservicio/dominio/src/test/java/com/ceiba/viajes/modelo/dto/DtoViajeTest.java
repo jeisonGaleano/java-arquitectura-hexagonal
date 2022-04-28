@@ -23,13 +23,13 @@ class DtoViajeTest {
         assertEquals(10, dtoViaje.getToneladas());
         assertEquals(1, dtoViaje.getTipoVehiculo());
         assertEquals(LocalDateTime.parse("2022-05-01T09:02:26.658"), dtoViaje.getFechaCreacion());
-        assertEquals(LocalDateTime.parse("2022-05-02T09:02:26.658"), dtoViaje.getFechaServicio());
+        assertEquals(LocalDateTime.parse("2022-05-02T09:02:26.658"), dtoViaje.getFechaServicios());
         assertEquals("Barranquilla", dtoViaje.getOrigen());
         assertEquals("Santa Marta", dtoViaje.getDestino());
         assertEquals(true, dtoViaje.getTerminado());
         assertEquals("condominio", dtoViaje.getTipoCasa());
-        assertEquals(100000L, dtoViaje.getPrecio());
-        
+        assertEquals(100000L, dtoViaje.getPrecios());
+
     }
 
 }
