@@ -1,4 +1,4 @@
-package com.ceiba.vehiculo.controlador;
+package com.ceiba.vehiculo;
 
 import com.ceiba.vehiculo.consulta.ManejadorListarVehiculos;
 import com.ceiba.vehiculo.modelo.dto.DtoVehiculoCarrion;

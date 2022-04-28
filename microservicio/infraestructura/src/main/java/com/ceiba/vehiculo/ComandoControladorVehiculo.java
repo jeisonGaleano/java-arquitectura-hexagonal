@@ -1,4 +1,4 @@
-package com.ceiba.vehiculo.controlador;
+package com.ceiba.vehiculo;
 
 import com.ceiba.ComandoRespuesta;
 import com.ceiba.vehiculo.comando.ComandoVehiculo;

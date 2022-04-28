@@ -15,7 +15,7 @@ public class DtoViaje {
     private Long idUsuario;
     @NotNull(message = "El ID Conductor es obligatorio")
     private Long idConductor;
-    private Long tonelads;
+    private Long toneladas;
     private Long tipoVehiculo;
     private LocalDateTime fechaCreacion;
     private LocalDateTime fechaServicio;
