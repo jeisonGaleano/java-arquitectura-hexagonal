@@ -29,6 +29,7 @@ class DtoViajeTest {
         assertEquals(true, dtoViaje.getTerminado());
         assertEquals("condominio", dtoViaje.getTipoCasa());
         assertEquals(100000L, dtoViaje.getPrecio());
+        
     }
 
 }
