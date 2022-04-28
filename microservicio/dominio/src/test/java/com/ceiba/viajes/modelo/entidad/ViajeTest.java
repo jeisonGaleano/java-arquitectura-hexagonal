@@ -29,11 +29,15 @@ class ViajeTest {
         assertEquals(10, viaje.getToneladas());
         assertEquals(1, viaje.getTipoVehiculo());
         assertEquals(LocalDateTime.parse("2022-05-01T09:02:26.658"), viaje.getFechaCreacion());
+        assertEquals(LocalDateTime.parse("2022-05-02T09:02:26.658"), viaje.getFechaServicio());
         assertEquals("Barranquilla", viaje.getOrigen());
         assertEquals("Santa Marta", viaje.getDestino());
         assertEquals(true, viaje.getTerminado());
         assertEquals("condominio", viaje.getTipoCasa());
         assertEquals(true, viaje.getTerminado());
+        assertEquals(100000L, viaje.getPrecio());
+
+
     }
 
     @Test
